@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
   <title>Contact Us | Shri Veda Industries LLP</title>
 
+  <!-- MAIN STYLES -->
   <link rel="stylesheet" href="style.css"/>
+
+  <!-- FONT -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<!-- ========= NAV ========= -->
-
+<!-- ================= NAV ================= -->
 <nav>
   <div class="nav-inner">
     <div class="logo">Shri Veda Industries LLP</div>
-
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="products.html">Products</a></li>
@@ -27,108 +27,107 @@
   </div>
 </nav>
 
-
-<!-- ========= HERO ========= -->
-
+<!-- ================= HERO ================= -->
 <section class="hero" style="height:65vh;">
   <div class="hero-content reveal">
-
     <h1>
       Let’s Start a<br>
       Reliable Partnership
     </h1>
-
     <p>
-      Get in touch with our team to discuss bulk orders,
-      custom specifications, or long-term supply requirements.
+      Connect with us instantly for bulk orders, pricing,
+      or custom industrial packaging requirements.
     </p>
-
   </div>
 </section>
 
-
-<!-- ========= CONTACT SECTION ========= -->
-
+<!-- ================= CONTACT ================= -->
 <section class="section">
   <div class="container contact">
 
     <!-- LEFT INFO -->
     <div class="reveal">
-
-      <h2 style="font-size:48px;">
-        Contact Information
-      </h2>
+      <h2 style="font-size:48px;">Contact Information</h2>
 
       <p style="margin-top:25px;opacity:.8;font-size:18px;">
-        We work with businesses across industries that require
-        consistent quality, reliable supply, and scalable manufacturing.
+        We work with businesses that require consistent quality,
+        dependable supply, and long-term manufacturing partners.
       </p>
 
       <div style="margin-top:40px;line-height:1.9;opacity:.85;">
         <strong>Company:</strong> Shri Veda Industries LLP<br>
         <strong>Location:</strong> Rudrapur, Uttarakhand, India<br>
-        <strong>Email:</strong> svi.rudrapur.uk@gmail.com<br>
-        <strong>Phone:</strong> +91 9105595000
+        <strong>WhatsApp:</strong> +91 91055 95000
       </div>
 
       <p style="margin-top:35px;opacity:.75;">
-        Our team will respond within one business day.
+        Our team usually responds within a few minutes during business hours.
       </p>
-
     </div>
 
     <!-- RIGHT FORM -->
     <div class="reveal">
+      <form id="whatsappForm">
 
-      <!-- 
-        FORM SUBMIT
-        Replace YOUR_EMAIL with your actual email.
-        Example: sales@shrivedaindustries.com
-      -->
+        <input type="text" id="name" placeholder="Your Name" required>
 
-      <form action="https://formsubmit.co/svi.rudrapur.uk@gmail.com" method="POST">
+        <input type="email" id="email" placeholder="Your Email" required>
 
-        <!-- Disable captcha -->
-        <input type="hidden" name="_captcha" value="false">
+        <input type="text" id="company" placeholder="Company Name">
 
-        <!-- Redirect after submit (optional) -->
-        <input type="hidden" name="_next" value="thank-you.html">
+        <textarea id="message" rows="5" placeholder="Tell us about your requirement" required></textarea>
 
-        <input type="text" name="name" placeholder="Your Name" required>
-
-        <input type="email" name="email" placeholder="Your Email" required>
-
-        <input type="text" name="company" placeholder="Company Name">
-
-        <textarea name="message" rows="5" placeholder="Tell us about your requirement" required></textarea>
-
-        <button class="btn" type="submit">
-          Send Inquiry
+        <button type="submit" class="btn">
+          Send Inquiry on WhatsApp
         </button>
 
       </form>
-
     </div>
 
   </div>
 </section>
 
-
-<!-- ========= FOOTER ========= -->
-
+<!-- ================= FOOTER ================= -->
 <footer>
   © Shri Veda Industries LLP. All rights reserved.
 </footer>
 
-
-<!-- ========= WHATSAPP ========= -->
-
+<!-- ================= FLOATING WHATSAPP ================= -->
 <a href="https://wa.me/919105595000" class="whatsapp" target="_blank">
   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
 </a>
 
-
+<!-- ================= SCRIPT ================= -->
 <script src="script.js"></script>
+
+<script>
+document.getElementById("whatsappForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let company = document.getElementById("company").value;
+    let message = document.getElementById("message").value;
+
+    let whatsappText =
+`Hello Shri Veda Industries,
+
+I am interested in your products.
+
+Name: ${name}
+Email: ${email}
+Company: ${company}
+Requirement: ${message}`;
+
+    let phoneNumber = "919105595000"; 
+    // 👆 CHANGE ONLY THIS IF NEEDED (CountryCode + Number, no +)
+
+    window.open(
+      "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(whatsappText),
+      "_blank"
+    );
+});
+</script>
 
 </body>
 </html>
